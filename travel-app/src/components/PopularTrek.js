@@ -9,13 +9,14 @@ import axios from 'axios';
 
 function PopularTrek() {
   const [trek,setTrek]=useState([]);
+ 
   //const navigate=useNavigate();
   useEffect(()=>{
     axios.get("https://travel-website-rouge.vercel.app/")
     .then(treks=>setTrek(treks.data))
     .catch(err=>console.log(err))
   },[])
-
+  console.log("Value of popularTreks:", treks);
   return (
     <div className='popularTrek'>
       <h1 id="popularTrek">Popular Treks in India</h1><hr/>
