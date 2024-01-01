@@ -15,7 +15,7 @@ function Navbar() {
     const logoutUser = async () => {
         try {
             let token = localStorage.getItem("userDataToken");
-            const res = await fetch("http://127.0.0.1:8000/logout", {
+            const res = await fetch("https://travel-website-rouge.vercel.app/logout", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

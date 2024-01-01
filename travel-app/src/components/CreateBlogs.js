@@ -4,9 +4,7 @@ import './blog.css'
 import Footer from './Footer'
 import { LoginContext } from './Context'
 import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
-import { useRef } from 'react';
+
 
 /*{function CreateBlogs() {
   return (

@@ -11,7 +11,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
-            axios.post("http://127.0.0.1:8000/login", { email, pass })
+            axios.post("https://travel-website-rouge.vercel.app/login", { email, pass })
                 .then(res => {
                     console.log(res.data)
                     document.getElementById("demo").innerHTML = res.data.message

@@ -18,7 +18,7 @@ function SignUp() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            axios.post("http://localhost:8000/signup", { name, email, pass })
+            axios.post("https://travel-website-rouge.vercel.app/signup", { name, email, pass })
                 .then(result => {
                     document.getElementById("demo").innerHTML = result.data.message;
                     setEmail('');
@@ -31,7 +31,7 @@ function SignUp() {
         catch (error) {
             console.error(error);
         }
-        const data = await fetch('http://localhost:8000/signup', {
+        const data = await fetch('https://travel-website-rouge.vercel.app/signup', {
             method: 'post',
             body: JSON.stringify({ name, email, pass }),
             headers: {

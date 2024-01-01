@@ -11,7 +11,7 @@ function PopularTrek() {
   const [trek,setTrek]=useState([]);
   //const navigate=useNavigate();
   useEffect(()=>{
-    axios.get("http://localhost:8000")
+    axios.get("https://travel-website-rouge.vercel.app")
     .then(treks=>setTrek(treks.data))
     .catch(err=>console.log(err))
   },[])

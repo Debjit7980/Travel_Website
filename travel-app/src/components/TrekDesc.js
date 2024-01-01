@@ -12,7 +12,7 @@ function TrekDesc() {
     const [desc,setDesc]=useState({});
     const [data, setData] = useState(false)
     useEffect(()=>{
-        axios.get("http://localhost:8000/getTrek/"+id)
+        axios.get("https://travel-website-rouge.vercel.app/getTrek/"+id)
         .then(res=>{
             setTimeout(()=>{
               setDesc(res.data)
