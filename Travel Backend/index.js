@@ -13,8 +13,9 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ 
-    origin: 'http://localhost:3000',  // Adjust with your frontend's origin
-    credentials: true,
+    origin: ['https://travel-website-naturesdeck.vercel.app'],  // Adjust with your frontend's origin
+    methods:["POST","GET"],
+    credentials: true
   }));
 
 
