@@ -24,6 +24,7 @@ function Home() {
       let token = localStorage.getItem("userDataToken");
       const res = await fetch("https://travel-website-rouge.vercel.app/validateuser", {
         method: "GET",
+        credentials:"include",
         headers: {
           "Content-Type": "application/json",
           "Authorization": token
