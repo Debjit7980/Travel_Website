@@ -16,7 +16,7 @@ function PopularTrek() {
     .then(treks=>setTrek(treks.data))
     .catch(err=>console.log(err))
   },[])
-  console.log("Value of popularTreks:", treks);
+  console.log("Value of popularTreks:", trek);
   return (
     <div className='popularTrek'>
       <h1 id="popularTrek">Popular Treks in India</h1><hr/>
