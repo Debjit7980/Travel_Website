@@ -1,0 +1,116 @@
+.hero-last{
+    position: relative;
+
+}
+.hero-image{
+    
+   display: flex;
+}
+.offer{
+    position: absolute;
+    top:20%;
+    color:white;
+    gap:2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.first{
+    background-color: rgba(223, 50, 79, 0.9);
+    width:40%;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    padding:20px;
+    padding-bottom:30px;
+    
+}
+
+
+.offer-desc{
+    text-align: center;
+    margin-top:-1%;
+}
+.offer-desc h6{
+    font-weight: 100;
+    font-size: 1rem;
+}
+#percent{
+    margin-top:1%;
+    font-size: 10rem;
+    font-weight: 100;
+}
+.offer-desc small{
+    font-size: 3rem;
+    color:rgb(192, 189, 189);
+    font-weight: 100;
+}
+.offer-desc h2{
+    margin-bottom:4%;
+    font-weight: 100;
+}
+.offer-desc p{
+    font-weight: 100;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+.hero-button{
+    margin-top:10%;
+    font-size: 1.4rem;
+    padding:5px 12px;
+    border: none;
+    background-color: rgb(46, 58, 109);
+    cursor: pointer;
+    color:white;
+    font-weight:100;
+}
+.hero-button:hover{
+    background-color: rgb(34, 34, 99);
+    transition: 0.4s;
+}
+@media screen and (max-width:800px){
+    .offer{
+        flex-direction: column;
+        top:5%;
+        gap:1rem;
+    }
+    .first{
+        width: 80%;
+    }
+    .second{
+        width: 80%;
+    }
+    .offer-desc h2{
+        margin-bottom:1%;
+    }
+    .offer-desc button{
+        margin-top:5%;
+    }
+    
+}
+@media screen and (max-width:432px){
+    .offer{
+        margin-top:-9%;
+        flex-direction: column;
+        gap:1px;
+        
+    }
+    h6{
+        margin-bottom:2px;
+    }
+    .first{
+        width: 90%;
+        padding:20px
+    }
+    
+    .offer-desc p{
+        font-size: 1rem;
+        margin-top:7% ;
+    }
+    .offer-desc button{
+        margin-top:6%;
+    }
+}

@@ -1,0 +1,118 @@
+.poptrek{
+    margin-top:4%;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.two{
+    padding:30px 10px;
+    height: fit-content;
+}
+.poptrek .container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+}
+.desc{
+    margin-left:6%;
+    margin-top: -7%;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    color:rgb(78, 76, 76);
+}
+.desc span{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+.desc h1{
+    padding-bottom:8px;
+}
+.desc hr{
+    border: 2px solid orange;
+    width: 30%;
+    display:flex;
+    margin-bottom: 2%;
+}
+.images{
+    position: relative;
+    display: flex;
+    margin-right:5%;
+}
+.images img{
+    margin-left:22px;
+    border-radius: 35px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+.images img:hover{
+    transform: scale(1.06);
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width:960px) {
+    .poptrek .container{
+        flex-direction: column;
+        margin:4% 1%;        
+        align-items: center;
+        justify-content: center;
+    }
+    .desc hr{
+
+        margin: auto;
+    }
+    .desc{
+        text-align: center;
+        align-items: center;
+        font-size: 2.6rem;
+        margin-right:10% ;
+    }
+    .desc span{
+        font-size:45px;
+    }
+    .images{
+
+        margin-top:5%;
+        display: flex;
+    }
+}
+@media screen and (max-width:430px){
+    .two{
+       display: flex;
+       flex:1;
+       overflow-x: auto;
+       ::-webkit-scrollbar {
+        display: none;
+        margin:auto;
+     }
+       
+    }
+    .desc{
+        margin:auto;
+        align-items: center;
+    }
+    
+    .desc h1{
+        font-size:35px;
+    
+    }
+    .desc hr{
+        margin:auto;
+    }
+    .images{
+        display: flex;
+        width: 100%;
+        margin:0 1%;
+        min-height: min-content;
+       
+    }
+    .container{
+        margin-left: 0%;
+        margin-right: 5%;
+    }
+    
+}
