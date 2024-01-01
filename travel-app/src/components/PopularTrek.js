@@ -12,7 +12,7 @@ function PopularTrek() {
   //const navigate=useNavigate();
   useEffect(()=>{
     axios.get("https://travel-website-rouge.vercel.app")
-    .then(treks=>setTrek(treks.data))
+    .then(res=>setTrek(res.data))
     .catch(err=>console.log(err))
   },[])
 
