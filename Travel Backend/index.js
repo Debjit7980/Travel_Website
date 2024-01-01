@@ -127,7 +127,7 @@ app.get("/logout",authenticate,async(req,res)=>{
 app.get("/",(req,res)=>{
     res.send("Hello");
     trekDetails.find({})
-    .then(details=>res.json(details))
+    .then(details=>console.log(details))
     .catch(err=>console.log(err))
     
 });
