@@ -20,7 +20,7 @@ app.use(cors({
 
 
 const port=process.env.PORT|| 8000;
-mongoose.connect("mongodb://127.0.0.1:27017/TravelDb",{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/?retryWrites=true&w=majority/TravelDb",{useNewUrlParser:true,useUnifiedTopology:true})
 trekDetails.createIndexes();
 
 app.post("/signup",async (req,res)=>{
