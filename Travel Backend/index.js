@@ -12,11 +12,12 @@ const app=express();
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ 
+/*app.use(cors({ 
     origin: 'https://travel-website-naturesdeck.vercel.app',  // Adjust with your frontend's origin
     methods:["POST","GET"],
     credentials: true
-  }));
+  }));*/
+app.use(cors());
 
 
 const port=process.env.PORT|| 8000;
