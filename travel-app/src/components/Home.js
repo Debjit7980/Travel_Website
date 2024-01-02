@@ -54,7 +54,7 @@ function Home() {
   }, [])*/
   return (
     <>
-      {/*
+      /*
         data ? (
           <>*/
             <Navbar />
@@ -72,7 +72,7 @@ function Home() {
             <PopCamp />
             <HeroSectionLast />
             <Footer />
-          </>
+          
         /*) :
           <div className="preloader">
             <div class="bar">
@@ -87,7 +87,7 @@ function Home() {
             Loading...&nbsp;
             <CircularProgress />
           </Box>*/          
-      }
+      
     </>
   )
 }
