@@ -24,6 +24,7 @@ function Home() {
       let token = localStorage.getItem("userDataToken");
       const res = await fetch("https://travel-website-rouge.vercel.app/validateuser", {
         method: "GET",
+        credentials:"include",
         headers: {
           "Content-Type": "application/json",
           "Authorization": token
@@ -53,41 +54,35 @@ function Home() {
   }, [])
   return (
     <>
-      {
-        data ? (
-          <>
-            <Navbar />
-            <HeroSection
-              cName="Hero"
-              video={require("../components/Videos/vid1.mp4")}
-              heroHead="Let's get ready to Explore"
-              btn1="Travel"
-              btn2="Get Started" />
-            <PopTrek />
-            <div className='trekBanner'>
-              <img src={require("../components/images/TR\ \(1\).jpg")} alt="banner" />
-            </div>
-            <PopularTrek />
-            <PopCamp />
-            <HeroSectionLast />
-            <Footer />
-          </>
-        ) :
-          <div className="preloader">
-            <div class="bar">
-            <div class="circle"></div>
-            <p id="first">Loading</p>
-            <p id="second">Loading</p>
-            <p>Loading</p>
-            </div>
-          </div>
-          
-          /*<Box sx={{ display: 'flex', position: 'absolute', left: '50%', alignItems: 'center', height: "100vh" }}>
-            Loading...&nbsp;
-            <CircularProgress />
-          </Box>*/          
-      }
-    </>
+        {
+          data ? 
+            <>
+              <Navbar />
+              <HeroSection
+                cName="Hero"
+                video={require("../components/Videos/vid1.mp4")}
+                heroHead="Let's get ready to Explore"
+                btn1="Travel"
+                btn2="Get Started" />
+              <PopTrek />
+              <div className='trekBanner'>
+                <img src={require("../components/images/TR\ \(1\).jpg")} alt="banner" />
+              </div>
+              
+              <PopCamp />
+              <HeroSectionLast />
+              <Footer />
+            </> :
+                <div className="preloader">
+                  <div class="bar">
+                  <div class="circle"></div>
+                  <p id="first">Loading</p>
+                  <p id="second">Loading</p>
+                  <p>Loading</p>
+                  </div>
+                </div>
+          }
+      </>
   )
 }
 

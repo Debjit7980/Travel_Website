@@ -12,15 +12,17 @@ const app=express();
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ 
-    origin: 'http://localhost:3000',  // Adjust with your frontend's origin
-    credentials: true,
-  }));
+app.use(cors({
+  origin: 'https://travel-website-naturesdeck.vercel.app', // Replace with your frontend's actual origin
+  methods: ['POST', 'GET'],
+  credentials: true,
+}));
 
 
 const port=process.env.PORT|| 8000;
-mongoose.connect("mongodb://127.0.0.1:27017/TravelDb",{useNewUrlParser:true,useUnifiedTopology:true})
-trekDetails.createIndexes();
+mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/?retryWrites=true&w=majority/TravelDb")
+
+//trekDetails.createIndexes();
 
 app.post("/signup",async (req,res)=>{
     try{
@@ -124,7 +126,7 @@ app.get("/logout",authenticate,async(req,res)=>{
 })
 
 app.get("/",(req,res)=>{
-    //res.send("Hello")
+    res.send("Hello");
     trekDetails.find({})
     .then(details=>res.json(details))
     .catch(err=>console.log(err))
