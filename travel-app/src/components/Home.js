@@ -54,25 +54,35 @@ function Home() {
   }, [])
   return (
     <>
-      
-            <Navbar />
-            <HeroSection
-              cName="Hero"
-              video={require("../components/Videos/vid1.mp4")}
-              heroHead="Let's get ready to Explore"
-              btn1="Travel"
-              btn2="Get Started" />
-            <PopTrek />
-            <div className='trekBanner'>
-              <img src={require("../components/images/TR\ \(1\).jpg")} alt="banner" />
-            </div>
-            
-            <PopCamp />
-            <HeroSectionLast />
-            <Footer />
-          
+        {
+          data ? 
+            <>
+              <Navbar />
+              <HeroSection
+                cName="Hero"
+                video={require("../components/Videos/vid1.mp4")}
+                heroHead="Let's get ready to Explore"
+                btn1="Travel"
+                btn2="Get Started" />
+              <PopTrek />
+              <div className='trekBanner'>
+                <img src={require("../components/images/TR\ \(1\).jpg")} alt="banner" />
+              </div>
               
-    </>
+              <PopCamp />
+              <HeroSectionLast />
+              <Footer />
+            </> :
+                <div className="preloader">
+                  <div class="bar">
+                  <div class="circle"></div>
+                  <p id="first">Loading</p>
+                  <p id="second">Loading</p>
+                  <p>Loading</p>
+                  </div>
+                </div>
+          }
+      </>
   )
 }
 
