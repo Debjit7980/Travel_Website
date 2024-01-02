@@ -97,7 +97,7 @@ app.post("/login", async (req,res)=>{
    
 })
 
-app.get("/validateuser",authenticate,async(req,res)=>{
+/*app.get("/validateuser",authenticate,async(req,res)=>{
     try{
         const validUserOne=await userDetails.findOne({_id:req.rootUser._id});
         res.status(201).json({status:201,message:"Validated",validUserOne});
@@ -108,7 +108,7 @@ app.get("/validateuser",authenticate,async(req,res)=>{
     }
     
 
-})
+})*/
 
 app.get("/logout",authenticate,async(req,res)=>{
     try{
