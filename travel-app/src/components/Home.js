@@ -54,9 +54,9 @@ function Home() {
   }, [])*/
   return (
     <>
-      {
+      {/*
         data ? (
-          <>
+          <>*/
             <Navbar />
             <HeroSection
               cName="Hero"
@@ -73,7 +73,7 @@ function Home() {
             <HeroSectionLast />
             <Footer />
           </>
-        ) :
+        /*) :
           <div className="preloader">
             <div class="bar">
             <div class="circle"></div>
@@ -81,7 +81,7 @@ function Home() {
             <p id="second">Loading</p>
             <p>Loading</p>
             </div>
-          </div>
+          </div>*/
           
           /*<Box sx={{ display: 'flex', position: 'absolute', left: '50%', alignItems: 'center', height: "100vh" }}>
             Loading...&nbsp;
