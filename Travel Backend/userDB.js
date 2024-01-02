@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const bcrypt=require('bcryptjs');
 const jwt = require('jsonwebtoken');
-mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/?retryWrites=true&w=majority/TravelDb")
+mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/TravelDb?retryWrites=true&w=majority")
 
 
 const secretKey="debjitsingharoy"
