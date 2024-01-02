@@ -19,7 +19,7 @@ function Home() {
   console.log(loginData.validUserOne);
   const [data, setData] = useState(false)
   const navigate = useNavigate();
-  const validateUser = async () => {
+  /*const validateUser = async () => {
     try {
       let token = localStorage.getItem("userDataToken");
       const res = await fetch("https://travel-website-rouge.vercel.app/validateuser", {
@@ -51,7 +51,7 @@ function Home() {
       setData(true);
       validateUser();
     }, 4000)
-  }, [])
+  }, [])*/
   return (
     <>
       {
