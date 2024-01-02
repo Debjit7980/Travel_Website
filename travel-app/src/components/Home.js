@@ -66,7 +66,7 @@ function Home() {
             <div className='trekBanner'>
               <img src={require("../components/images/TR\ \(1\).jpg")} alt="banner" />
             </div>
-            <PopularTrek />
+            
             <PopCamp />
             <HeroSectionLast />
             <Footer />
