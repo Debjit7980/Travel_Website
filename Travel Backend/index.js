@@ -131,8 +131,7 @@ app.get("/", (req, res) => {
   trekDetails.find({})
     .then(details => {
       // Send "Hello" as the initial response
-      res.send("Hello");
-      res.send(details);
+      res.send("Hello",details);
       // Now, send the array of trek details as a JSON response
       res.json(details);
     })
