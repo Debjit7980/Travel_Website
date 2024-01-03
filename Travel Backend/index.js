@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: 'https://travel-website-naturesdeck.vercel.app', // Replace with your frontend's actual origin
+  origin: 'https://naturesdeck.onrender.com', // Replace with your frontend's actual origin
   methods: ['POST', 'GET'],
   credentials: true,
 }));
