@@ -25,7 +25,7 @@ mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdc
 
 //trekDetails.createIndexes();
 
-app.post("/signup",async (req,res)=>{
+app.post("https://naturesdeck-backend.onrender.com/signup",async (req,res)=>{
   console.log("signup");
     try{
         const name=req.body.name
@@ -59,7 +59,7 @@ app.post("/signup",async (req,res)=>{
     }
     
 })
-app.post("/login", async (req,res)=>{
+app.post("https://naturesdeck-backend.onrender.com/login", async (req,res)=>{
   console.log("login");
     const email=req.body.email;
     const password=req.body.pass;   
@@ -100,7 +100,7 @@ app.post("/login", async (req,res)=>{
    
 })
 
-app.get("/validateuser",authenticate,async(req,res)=>{
+app.get("https://naturesdeck-backend.onrender.com/validateuser",authenticate,async(req,res)=>{
     try{
         const validUserOne=await userDetails.findOne({_id:req.rootUser._id});
         res.status(201).json({status:201,message:"Validated",validUserOne});
@@ -113,7 +113,7 @@ app.get("/validateuser",authenticate,async(req,res)=>{
 
 })
 
-app.get("/logout",authenticate,async(req,res)=>{
+app.get("https://naturesdeck-backend.onrender.com/logout",authenticate,async(req,res)=>{
     try{
         req.rootUser.tokens=req.rootUser.tokens.filter((curelem)=>{
             return curelem.token!==req.token
@@ -128,7 +128,7 @@ app.get("/logout",authenticate,async(req,res)=>{
     }
 })
 
-app.get("/", (req, res) => {
+app.get("https://naturesdeck-backend.onrender.com/", (req, res) => {
   trekDetails.find({})
     .then(details => {
       // Send "Hello" as the initial response
