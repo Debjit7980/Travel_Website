@@ -132,7 +132,7 @@ app.get("/", (req, res) => {
     .then(details => {
       // Send "Hello" as the initial response
       res.send("Hello");
-      
+      res.send(details);
       // Now, send the array of trek details as a JSON response
       res.json(details);
     })
