@@ -12,11 +12,12 @@ const app=express();
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
+/*app.use(cors({
   origin: 'https://naturesdeck.onrender.com', // Replace with your frontend's actual origin
   methods: ['POST', 'GET'],
   credentials: true,
-}));
+}));*/
+app.use(cors());
 
 
 const port=process.env.PORT|| 8000;
