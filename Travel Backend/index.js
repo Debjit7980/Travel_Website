@@ -127,12 +127,16 @@ app.get("/logout",authenticate,async(req,res)=>{
     }
 })
 
-app.get("/",(req,res)=>{
-    res.send("Hello");
-    trekDetails.find({})
-    .then(details=>res.json(details))
-    .catch(err=>console.log(err))
-    
+app.get("/", (req, res) => {
+  trekDetails.find({})
+    .then(details => {
+      // Send "Hello" as the initial response
+      res.send("Hello");
+      
+      // Now, send the array of trek details as a JSON response
+      res.json(details);
+    })
+    .catch(err => console.log(err));
 });
 app.get("/getTrek/:id",(req,res)=>{
     const id=req.params.id;
