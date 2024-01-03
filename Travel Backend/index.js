@@ -25,6 +25,7 @@ mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdc
 //trekDetails.createIndexes();
 
 app.post("/signup",async (req,res)=>{
+  console.log("signup");
     try{
         const name=req.body.name
         const email=req.body.email
@@ -58,6 +59,7 @@ app.post("/signup",async (req,res)=>{
     
 })
 app.post("/login", async (req,res)=>{
+  console.log("login");
     const email=req.body.email;
     const password=req.body.pass;   
     try{
