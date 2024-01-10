@@ -297,6 +297,7 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       const uploadPath = path.join(__dirname,'..','travel-app','public','Uploads');
       cb(null, uploadPath);
+      console.log('Upload Path:', uploadPath);
     },
     filename: (req, file, cb) => {
       cb(null, `${Date.now()}_${file.originalname}`);
