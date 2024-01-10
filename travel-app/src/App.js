@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import TrekDesc from './components/TrekDesc';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import Profile from './components/Profile';
 //import { useEffect, useState } from 'react';
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/products" element={<Products name="HEllo" />} />
         <Route path="/trekdesc/:id" element={<TrekDesc />} />
+        <Route path="/profile" element={<Profile/>} />
         {/*<Route path='/uk' element={<Uttarakhand/>}/>
               <Route path='/manali' element={<Himachal/>}/>
               <Route path='/west-bengal' element={<WB/>}/>

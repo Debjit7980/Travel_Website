@@ -1,5 +1,5 @@
 .navbar{
-    margin-top:18px;
+    top:18px;
     position:fixed;
     z-index:999;
     margin-left:2%;
@@ -8,7 +8,8 @@
     justify-content: space-between;
 }
 .navbar.active{
-    margin:0px;
+    top:0;
+    margin:0;
     position: fixed;
     width:100%;
     border-radius:0px;
@@ -182,7 +183,7 @@
     }
     .menu-icon{
         display: block;
-        margin-top:3%;
+        margin-top:6%;
     }
     #navitems.active{
         left:62%;
@@ -198,14 +199,16 @@
 @media screen and (max-width:430px){
     #navitems{
         width:100%;
-        right:-200%;
+        right:-100%;
         top:12%;
         margin:auto;
     }
     .signUp{
         top:30%;
         display: flex;
-        left:33%;
+        left:7%;
+        right:0;
+        margin:2% auto;
         height: 50px;
         
     }
@@ -213,17 +216,18 @@
         margin:auto;
     }
     #navitems.active{
-        margin-right: 0%;
+        right: 0%;
+        margin-right:0;
     }
     .navbar-container.active>#navitems{
-        top:10%;
+        top:8%;
         border-radius:0px ;
         margin-right: 0px;
     }
     
     #signUp a{
-        padding:10px 10px;
-         
+        padding:10px 13px;
+         text-align: center;
     }
 }
 @media screen and (max-width:350px){

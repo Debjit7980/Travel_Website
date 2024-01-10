@@ -8,7 +8,7 @@ function Context({children}) {
   return (
     <>
         <LoginContext.Provider value={{loginData,setLoginData}}>
-            {children}
+          {children}
         </LoginContext.Provider>      
     </>
   )

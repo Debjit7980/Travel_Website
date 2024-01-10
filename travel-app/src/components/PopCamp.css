@@ -14,8 +14,9 @@
     width:7%;
 }
 .wrapper{
-    margin:5%;
+    margin:2% 5%;
    transform: translateZ(0);
+   justify-content: center;
    ::-webkit-scrollbar {
     display: none;
  }
@@ -29,7 +30,7 @@
 .wrapper ul li{
     list-style: none;
 }
-@media screen and(max-width:362px) {
+@media screen and (max-width: 362px) {
    .wrapper{
     width: 100%;
     justify-content: center;
@@ -42,7 +43,8 @@
         width: 10%;
     }
 }
-@media screen and (max-width:392px){
+@media (max-width: 392px)
+{
     .popularTrek h1{
         font:2rem Poppins, sans-serif;
         margin: 0 5%;
@@ -51,5 +53,9 @@
         width: 30%;
         margin-top:4%;
        
+    }
+    .wrapper{
+        margin-left:-2%;
+        border:1px solid black;
     }
 } 

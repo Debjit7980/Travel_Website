@@ -1,9 +1,9 @@
 .preloader{
-    width:100%;
-    height:100%;
-    background-color: white;
-    position: absolute;
-    top:0;
+  width:100%;
+  height:100%;
+  background-color: white;
+  position: absolute;
+  top:0;
 
 }
 .trekBanner{
@@ -63,5 +63,14 @@
     75% {left: 100%; -webkit-transform: rotate(360deg); width: 150px; height: 150px;}
     100% {right: 100%;}
   } 
+
+
+@media (max-width:600px)
+{
+  .preloader>.bar{
+    width: 90%;
+    top:35%;
+  }
+}
   
  

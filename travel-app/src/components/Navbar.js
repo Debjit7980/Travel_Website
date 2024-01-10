@@ -5,7 +5,7 @@ import { LoginContext } from './Context'
 
 function Navbar() {
     const { loginData, setLoginData } = useContext(LoginContext);
-    console.log(loginData.validUserOne);
+    //console.log(loginData.validUserOne);
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -15,7 +15,7 @@ function Navbar() {
     const logoutUser = async () => {
         try {
             let token = localStorage.getItem("userDataToken");
-            const res = await fetch("https://travel-website-rouge.vercel.app/logout", {
+            const res = await fetch("https://naturesdeck-trekCamp-backend-app.onrender.com/logout", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -26,7 +26,8 @@ function Navbar() {
 
             });
             const data = await res.json();
-            if (data.status == 201) {
+            console.log("The data: ",data);
+            if (data.status === 201) {
                 console.log("User Logged Out");
                 localStorage.removeItem("userDataToken");
                 setLoginData(false);
@@ -69,9 +70,9 @@ function Navbar() {
                             <>
                                 <li className='nav-item' style={{ marginLeft: 100 }} id="signUp">
                                     <div className='signUp' onClick={()=>{handleClick(); closeMobileMenu()}}>
-                                        <Link to='/' className='nav-links-mobile' onClick={closeMobileMenu} id="si">{loginData.validUserOne.name}</Link>
+                                        <Link to='/' className='nav-links-mobile' onClick={closeMobileMenu} id="si">{loginData.validUserOne.username}</Link>
                                         <div className='dropdown-content'>
-                                                <Link to='#' className='links' id="profile" onClick={closeMobileMenu}>
+                                                <Link to='/profile' className='links' id="profile" onClick={closeMobileMenu}>
                                                     Profile
                                                 </Link>
                                             <button className='links' onClick={() =>{ closeMobileMenu() ;logoutUser()}}>

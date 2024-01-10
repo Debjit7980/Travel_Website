@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './form.css'
-import axios from 'axios';
+//import axios from 'axios';
 import Navbar from './Navbar';
 
 function Login() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const navigate = useNavigate();
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            axios.post("https://travel-website-rouge.vercel.app/login", { email, pass })
+            /*axios.post("https://naturesdeck-backend-app.onrender.com/login", { email, pass })
                 .then(res => {
                     console.log(res.data)
                     document.getElementById("demo").innerHTML = res.data.message
@@ -24,10 +24,28 @@ function Login() {
                         //setPass(res.data.pass);
                     }
                 })
-                .catch(err => console.log(err))
+                .catch(err => console.log(err))*/
+            const data=await fetch('https://naturesdeck-trekCamp-backend-app.onrender.com/login', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, pass }),
+            })
+            const result = await data.json();
+            if(result.status===201)
+            {
+                console.log("After Logging in: ", result);
+                localStorage.setItem("userDataToken", result.response.token);
+                navigate("/");
+                //document.getElementById("demo").innerHTML=result.messege;
+            }
+            else{
+                document.getElementById("demo").innerHTML=result.message;
+            }
         }
         catch (e) {
-            console.error(e);
+            console.error("Error:",e);
         }
 
     }
@@ -35,7 +53,7 @@ function Login() {
         window.scrollTo(0, 0);
     },[])
     return (
-        <>
+        <div className="form-container">  
             <Navbar />
             <div className='all'></div>
             <div className='form signin secondform'>
@@ -47,8 +65,8 @@ function Login() {
                             <label>E-mail</label>
                             <p id="msg1"></p>
                         </div>
-                        <div className="form-input-container">
-                            <input type="password" className="form-control shadow-none" required name="pass" onChange={(e) => { setPass(e.target.value) }} />
+                        <div className="form-input-container" id="input-pass">
+                            <input type="password" className="form-control shadow-none" required name="pass"  onChange={(e) => { setPass(e.target.value) }} />
                             <label>Password</label>
                         </div>
                         <p id="demo" className='text-danger'></p>
@@ -62,6 +80,7 @@ function Login() {
                         
                     </div>
                     <div className='section'>
+                    <div className='fadeEffect'></div>
                         {/*<div className='pic'>
                             <img src={require('./images/signin.jpg')} className='image' alt="img" />
                         </div>*/}
@@ -76,7 +95,7 @@ function Login() {
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

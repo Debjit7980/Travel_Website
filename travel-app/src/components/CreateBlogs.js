@@ -33,10 +33,14 @@ const CreateBlogs = () => {
 
   //console.log(result);
   useEffect(() => {
-    // Load blogs from local storage on component mount
-    const storedBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
-    setBlogs(storedBlogs);
-
+    // Fetch all blogs from the server on component mount
+    fetch('https://naturesdeck-backend-app.onrender.com/allBlogs')
+      .then(response => response.json())
+      .then(data => {
+        setBlogs(data);
+        console.log("Blog data:",data);
+      })
+      .catch(error => console.error('Error fetching blogs:', error));
   }, []);
 
 
@@ -59,14 +63,34 @@ const CreateBlogs = () => {
   const handleAddBlog = async () => {
     if (newBlogTitle.trim() !== '' && newBlogContent.trim() !== '') {
       setLoading(true);
-      const newBlog = {
-        id: loginData.validUserOne._id,
-        Del_id: Date.now(),
-        title: newBlogTitle,
-        content: newBlogContent,
-        userName: loginData.validUserOne.name,
-        dateTime: getCurrentDateTime(),
-      };
+      try {
+        // Send the new blog content to the server
+        const response = await fetch(`https://naturesdeck-backend-app.onrender.com/addBlog`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: loginData.validUserOne._id,
+            title: newBlogTitle,
+            content: newBlogContent,
+            username: loginData.validUserOne.username,
+            dateTime: getCurrentDateTime(),
+          }),
+        });
+  
+        if (response.ok) {
+          console.log("Blog in Mongodb:",response);
+          const updatedBlogsResponse = await fetch('https://naturesdeck-backend-app.onrender.com/allBlogs');
+          const updatedBlogsData = await updatedBlogsResponse.json();
+          setBlogs(updatedBlogsData);
+        } else {
+          // Handle unsuccessful blog addition
+          console.error('Failed to add blog:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error adding blog:', error);
+      }
       setTimeout(() => {
         setShowPopup(false);
       }, 400);
@@ -74,15 +98,13 @@ const CreateBlogs = () => {
       setLoading(false)
       setShowPostedMessage(true);
       setShowPopup(false);
-      const updatedBlogs = [...blogs, newBlog];
-      setBlogs(updatedBlogs);
       setNewBlogTitle('');
       setNewBlogContent('');
       setTimeout(() => {
         setShowPostedMessage(false);
       }, 2000);
       // Save updated blogs to local storage
-      localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
+      //localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
     }
 
   }
@@ -121,12 +143,25 @@ const CreateBlogs = () => {
     setShowPopup(false);
   }
 
-  const handleRemoveBlog = (blogId) => {
-    const updatedBlogs = blogs.filter((blog) => blog.Del_id !== blogId);
-    setBlogs(updatedBlogs);
-
-    // Save updated blogs to local storage
-    localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
+  const handleRemoveBlog = async (blogId) => {
+    try {
+      // Send a DELETE request to remove the blog
+      const response = await fetch(`https://naturesdeck-backend-app.onrender.com/removeBlog/${blogId}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        // Update the state with the latest blogs after deletion
+        const updatedBlogsResponse = await fetch('https://naturesdeck-backend-app.onrender.com/allBlogs');
+        const updatedBlogsData = await updatedBlogsResponse.json();
+        setBlogs(updatedBlogsData);
+      } else {
+        // Handle unsuccessful blog deletion
+        console.error('Failed to remove blog:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error removing blog:', error);
+    }
   };
 
 
@@ -200,14 +235,14 @@ const CreateBlogs = () => {
           <h2 id="blogPost">The Blog Posts</h2>
           <ul>
             {blogs.map((blog) => (
-              <li key={blog.id} id="list">
-                <label id="blogtitle"><p id="date"><label id="posted">Blog Posted. </label><small>{blog.dateTime}</small></p><b id="blogtitle-two">{blog.title}</b><i id="name">By {blog.userName}</i></label><br />{blog.content.split('\n').map((line, index) => (
+              <li key={blog._id} id="list">
+                <label id="blogtitle"><p id="date"><label id="posted">Blog Posted. </label><small>{blog.dateTime}</small></p><b id="blogtitle-two">{blog.title}</b><i id="name">By {blog.username}</i></label><br />{blog.content.split('\n').map((line, index) => (
                   <React.Fragment key={index}>
                     {line}
                     <br />
                   </React.Fragment>
                 ))}
-                {loginData.validUserOne && loginData.validUserOne._id === blog.id ? <button onClick={() => handleRemoveBlog(blog.Del_id)} id="remove">Remove</button> : null}
+                {loginData.validUserOne && loginData.validUserOne._id === blog.id ? <button onClick={() => handleRemoveBlog(blog._id)} id="remove">Remove</button> : null}
               </li>
             ))}
           </ul>

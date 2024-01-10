@@ -16,15 +16,15 @@ function TrekCard({treks,trip,tripimg}) {
                         <span id="travel">{treks.name}----{trip}</span>
                         <div className='icons-list'>
                             <div className='icons'>
-                                <i class="fa-sharp fa-solid fa-taxi" id="car"></i>
+                                <i className="fa-sharp fa-solid fa-taxi" id="car"></i>
                                 <h6>Transport Included</h6>
                             </div>
                             <div className='icons'>
-                                <i class="fa-solid fa-bowl-food" id="stay"></i>
+                                <i className="fa-solid fa-bowl-food" id="stay"></i>
                                 <h6>Meals Included</h6>
                             </div>
                             <div className='icons'>
-                                <i class="fa-solid fa-bed" id="stay"></i>
+                                <i className="fa-solid fa-bed" id="stay"></i>
                                 <h6>Stay Included</h6>
                             </div>
                         </div>
@@ -37,11 +37,11 @@ function TrekCard({treks,trip,tripimg}) {
                         </pre>
                         <p>123 ratings</p>
                         <div className='rating'>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star" id="except"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star" id="except"></i>
                         </div>
                         <p id="cut"><s>&#8377; 25500</s></p>
                         <h2 id="price">&#8377; 19500</h2>  
