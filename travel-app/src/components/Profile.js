@@ -124,7 +124,7 @@ function Profile() {
     const email = loginData.validUserOne ? loginData.validUserOne.email : '';
     const pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
     const _id = loginData.validUserOne ? loginData.validUserOne._id : ' ';
-    const trimmedPath = pp?pp.replace(/\//g, '\\').replace(/.*travel-app(\\|\/)public(\\|\/)/, '/'): ' ';
+    const trimmedPath = pp?pp.replace(/\//g, '\\').replace(/.*travel-app(\\|\/)public(\\|\/)/, ''): ' ';
     console.log(trimmedPath);
 
     return (
@@ -147,7 +147,7 @@ function Profile() {
                                         <img src={URL.createObjectURL(profilePicture)} alt="preview" />
                                     ) : (
                                         <div className='profile-image'>
-                                            <img src=`https://naturesdeck-trekcamp-app.onrender.com${trimmedPath}` alt="profileImage" />
+                                            <img src= `https://naturesdeck-trekcamp-app.onrender.com/${trimmedPath}` alt="profileImage" />
                                         </div>
                                     )}
                                 </>
