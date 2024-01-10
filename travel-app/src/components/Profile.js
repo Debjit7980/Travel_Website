@@ -22,7 +22,7 @@ function Profile() {
                     navigate("/");
                 }
                 else {
-                    const res = await fetch("https://naturesdeck-trekCamp-backend-app.onrender.com/validateuser", {
+                    const res = await fetch("https://naturesdeck-trekcamp-backend-app.onrender.com/validateuser", {
                         method: "GET",
                         //credentials:"include",
                         headers: {
@@ -51,7 +51,7 @@ function Profile() {
         }
         validateUser();
 
-        fetch('https://naturesdeck-trekCamp-backend-app.onrender.com/allBlogs')
+        fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs')
             .then(response => response.json())
             .then(data => {
                 setBlogs(data);
@@ -65,13 +65,13 @@ function Profile() {
     const handleRemoveBlog = async (blogId) => {
         try {
             // Send a DELETE request to remove the blog
-            const response = await fetch(`https://naturesdeck-trekCamp-backend-app.onrender.com/removeBlog/${blogId}`, {
+            const response = await fetch(`https://naturesdeck-trekcamp-backend-app.onrender.com/removeBlog/${blogId}`, {
                 method: 'DELETE',
             });
 
             if (response.ok) {
                 // Update the state with the latest blogs after deletion
-                const updatedBlogsResponse = await fetch('https://naturesdeck-trekCamp-backend-app.onrender.com/allBlogs');
+                const updatedBlogsResponse = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs');
                 const updatedBlogsData = await updatedBlogsResponse.json();
                 setBlogs(updatedBlogsData);
             } else {
@@ -103,7 +103,7 @@ function Profile() {
             formData.append('userId', loginData.validUserOne._id); // Add user ID to FormData
 
             // Upload the profile picture
-            const response = await fetch(`https://naturesdeck-trekCamp-backend-app.onrender.com/uploadProfilePicture`, {
+            const response = await fetch(`https://naturesdeck-trekcamp-backend-app.onrender.com/uploadProfilePicture`, {
                 method: 'POST',
                 body: formData,
             });
