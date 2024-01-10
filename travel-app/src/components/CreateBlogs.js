@@ -34,7 +34,7 @@ const CreateBlogs = () => {
   //console.log(result);
   useEffect(() => {
     // Fetch all blogs from the server on component mount
-    fetch('https://naturesdeck-backend-app.onrender.com/allBlogs')
+    fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs')
       .then(response => response.json())
       .then(data => {
         setBlogs(data);
@@ -65,7 +65,7 @@ const CreateBlogs = () => {
       setLoading(true);
       try {
         // Send the new blog content to the server
-        const response = await fetch(`https://naturesdeck-backend-app.onrender.com/addBlog`, {
+        const response = await fetch(`https://naturesdeck-trekcamp-backend-app.onrender.com/addBlog`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const CreateBlogs = () => {
   
         if (response.ok) {
           console.log("Blog in Mongodb:",response);
-          const updatedBlogsResponse = await fetch('https://naturesdeck-backend-app.onrender.com/allBlogs');
+          const updatedBlogsResponse = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs');
           const updatedBlogsData = await updatedBlogsResponse.json();
           setBlogs(updatedBlogsData);
         } else {
@@ -146,13 +146,13 @@ const CreateBlogs = () => {
   const handleRemoveBlog = async (blogId) => {
     try {
       // Send a DELETE request to remove the blog
-      const response = await fetch(`https://naturesdeck-backend-app.onrender.com/removeBlog/${blogId}`, {
+      const response = await fetch(`https://naturesdeck-trekcamp-backend-app.onrender.com/removeBlog/${blogId}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
         // Update the state with the latest blogs after deletion
-        const updatedBlogsResponse = await fetch('https://naturesdeck-backend-app.onrender.com/allBlogs');
+        const updatedBlogsResponse = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs');
         const updatedBlogsData = await updatedBlogsResponse.json();
         setBlogs(updatedBlogsData);
       } else {
