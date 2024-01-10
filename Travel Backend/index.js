@@ -38,7 +38,7 @@ const blogs=db.collection("blogsCollection");
 //mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/?retryWrites=true&w=majority/TravelDb")
 const port=process.env.PORT|| 8000;
 //trekDetails.createIndexes();
-const allowedOrigins=['https://naturesdeck-trekCamp-app.onrender.com','http://localhost:3000'];
+const allowedOrigins=['https://naturesdeck-trekcamp-app.onrender.com','http://localhost:3000'];
 app.use(cors({
     origin: allowedOrigins ,  // Replace with your client's actual origin
     credentials: true,
