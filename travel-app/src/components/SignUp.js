@@ -29,7 +29,7 @@ function SignUp() {
                 })
                 .catch(err => console.log(err))
             //console.log("Data Stored");*/
-            const data = await fetch('https://naturesdeck-trekCamp-backend-app.onrender.com/signup', {
+            const data = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/signup', {
                 method: 'post',
                 body: JSON.stringify({ name, email, pass }),
                 headers: {
