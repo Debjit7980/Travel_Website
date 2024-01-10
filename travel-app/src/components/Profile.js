@@ -124,7 +124,7 @@ function Profile() {
     const email = loginData.validUserOne ? loginData.validUserOne.email : '';
     const pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
     const _id = loginData.validUserOne ? loginData.validUserOne._id : ' ';
-    const trimmedPath = pp?pp.replace(/.*public(\\|\/)/, '/'): ' ';
+     const trimmedPath = pp?pp.replace(/.*opt(\\|\/)src(\\|\/)/, '/'): ' ';
     console.log(trimmedPath);
 
     return (
