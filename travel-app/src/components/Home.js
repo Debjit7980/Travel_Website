@@ -26,7 +26,7 @@ function Home() {
           navigate("/");
         }
         else {
-          const res = await fetch("https://naturesdeck-trekCamp-backend-app.onrender.com/validateuser", {
+          const res = await fetch("https://naturesdeck-trekcamp-backend-app.onrender.com/validateuser", {
             method: "GET",
             //credentials:"include",
             headers: {
