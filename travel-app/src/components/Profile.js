@@ -122,9 +122,10 @@ function Profile() {
    
     const username = loginData.validUserOne ? loginData.validUserOne.username : '';
     const email = loginData.validUserOne ? loginData.validUserOne.email : '';
-    const pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
+    let pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
     const _id = loginData.validUserOne ? loginData.validUserOne._id : ' ';
-    const trimmedPath = pp?pp.replace(/\//g, '\\').replace(/.*travel-app(\\|\/)public(\\|\/)/, ''): ' ';
+    //const trimmedPath = pp?pp.replace(/\//g, '\\').replace(/.*travel-app(\\|\/)public(\\|\/)/, ''): ' ';
+    let trimmedPath='/Uploads/'+path;
     console.log(trimmedPath);
 
     return (
