@@ -148,7 +148,7 @@ function Profile() {
                                         <img src={URL.createObjectURL(profilePicture)} alt="preview" />
                                     ) : (
                                         <div className='profile-image'>
-                                            <img src={`https://naturesdeck-trekcamp-app.onrender.com/${trimmedPath}`} alt="profileImage" />
+                                            <img src={trimmedPath} alt="profileImage" />
                                         </div>
                                     )}
                                 </>
