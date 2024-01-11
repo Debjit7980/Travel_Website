@@ -125,7 +125,7 @@ function Profile() {
     let pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
     const _id = loginData.validUserOne ? loginData.validUserOne._id : ' ';
     //const trimmedPath = pp?pp.replace(/\//g, '\\').replace(/.*travel-app(\\|\/)public(\\|\/)/, ''): ' ';
-    let trimmedPath='/Uploads/'+path;
+    let trimmedPath='/Uploads/'+pp;
     console.log(trimmedPath);
 
     return (
