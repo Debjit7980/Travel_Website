@@ -323,7 +323,10 @@ app.post('/uploadProfilePicture', upload.single('profilePicture'), async (req, r
         const existingUser = await preusers.findOne({_id:new ObjectId(userId)});
         //console.log('User Filter:', userFilter);
         console.log('Existing User:', existingUser);
-        const update = { $set: { profilePicture: req.file.path } };
+        //const update = { $set: { profilePicture: req.file.path } };
+        const filename = req.file.filename; // or construct the relative path
+        const update = { $set: { profilePicture: filename } };
+        //console.log("Update:", update);
         console.log("update",update);
         const result = await preusers.updateOne({_id:new ObjectId(userId)}, update);
         console.log('Updated user document:', result);
