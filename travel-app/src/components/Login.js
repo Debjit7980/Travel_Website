@@ -11,21 +11,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            /*axios.post("https://naturesdeck-backend-app.onrender.com/login", { email, pass })
-                .then(res => {
-                    console.log(res.data)
-                    document.getElementById("demo").innerHTML = res.data.message
-                    if (res.data.status === "Success") {
-                        console.log("After Logging in: ", res.data)
-                        localStorage.setItem("userDataToken", res.data.result.token)
-
-                        navigate("/")
-                        //setEmail(res.data.email);
-                        //setPass(res.data.pass);
-                    }
-                })
-                .catch(err => console.log(err))*/
-            const data=await fetch('https://naturesdeck-trekCamp-backend-app.onrender.com/login', {
+            const data=await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/login', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ function Navbar() {
     const logoutUser = async () => {
         try {
             let token = localStorage.getItem("userDataToken");
-            const res = await fetch("https://naturesdeck-trekCamp-backend-app.onrender.com/logout", {
+            const res = await fetch("https://naturesdeck-trekcamp-backend-app.onrender.com/logout", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

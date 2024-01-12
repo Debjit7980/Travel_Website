@@ -19,17 +19,7 @@ function SignUp() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            /*axios.post("https://naturesdeck-backend-app.onrender.com/signup", { name, email, pass })
-                .then(result => {
-                    //navigate("/login");
-                    document.getElementById("demo").innerHTML = result.data.message;
-                    setEmail('');
-                    setName('');
-                    setPass('')
-                })
-                .catch(err => console.log(err))
-            //console.log("Data Stored");*/
-            const data = await fetch('https://naturesdeck-trekCamp-backend-app.onrender.com/signup', {
+            const data = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/signup', {
                 method: 'post',
                 body: JSON.stringify({ name, email, pass }),
                 headers: {

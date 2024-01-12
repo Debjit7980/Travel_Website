@@ -11,20 +11,9 @@ function TrekDesc() {
     const {id}=useParams();
     const [desc,setDesc]=useState({});
     const [data, setData] = useState(false)
-    /*useEffect(()=>{
-        fetch("https://naturesdeck-backend-app.onrender.com/getTrek/"+id)
-        .then(res=>{
-            setTimeout(()=>{
-              setDesc(res.data)
-              setData(true)
-              window.scrollTo(0, 0);
-              console.log(res.data)
-            },2000)
-        })
-        .catch(e=>console.log(e))
-    },[])*/
+   
     useEffect(() => {
-      fetch(`https://naturesdeck-trekCamp-backend-app.onrender.com/getTrek/${id}`)
+      fetch(`https://naturesdeck-trekcamp-backend-app.onrender.com/getTrek/${id}`)
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

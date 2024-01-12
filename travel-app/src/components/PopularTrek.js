@@ -17,7 +17,7 @@ function PopularTrek() {
     .catch(err=>console.log(err))
   },[])*/
   useEffect(() => {
-    fetch("https://naturesdeck-trekCamp-backend-app.onrender.com")
+    fetch("https://naturesdeck-trekcamp-backend-app.onrender.com")
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);

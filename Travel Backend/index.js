@@ -5,10 +5,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const cookieParser=require('cookie-parser');
 const bodyParser=require('body-parser');
-const path = require('path');
-const multer = require('multer');
-//const {trekDetails,treks}=require('./model');
-//const userDetails=require('./userDB');
+
+
 const { createUser,generateAuthToken, createBlogs} = require('./userDB');
 const authenticate=require("./authenticate");
 const { MongoClient,ObjectId } = require('mongodb');
@@ -16,12 +14,7 @@ const app=express();
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.json());
 app.use(cookieParser());
-/*app.use(cors({
-  origin: 'https://localhost:3000', // Replace with your frontend's actual origin
-  methods: ['POST', 'GET'],
-  credentials: true,
-}));*/
-//app.use(cors());
+
 
 const uri = "mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/?retryWrites=true&w=majority"; // Replace with your MongoDB Atlas connection string
 const dbName = "TravelDb"; // Replace with your database name
@@ -38,46 +31,12 @@ const blogs=db.collection("blogsCollection");
 //mongoose.connect("mongodb+srv://debjitsingharoy007:O2b13SGjjeIUJ4Jg@cluster0.gdcevv7.mongodb.net/?retryWrites=true&w=majority/TravelDb")
 const port=process.env.PORT|| 8000;
 //trekDetails.createIndexes();
-const allowedOrigins=['https://naturesdeck-trekCamp-app.onrender.com','http://localhost:3000'];
+const allowedOrigins=['https://naturesdeck-trekcamp-app.onrender.com','http://localhost:3000'];
 app.use(cors({
     origin: allowedOrigins ,  // Replace with your client's actual origin
     credentials: true,
 }));
-/*app.post("/signup",async (req,res)=>{
-    //res.send("signup");
-    try{
-        console.log("signup");
-        const name=req.body.name
-        const email=req.body.email
-        const password=req.body.pass
 
-        const formData={
-            name,email,password
-        }
-        const preuser=await userDetails.findOne({email:email});
-        if(preuser)
-        {
-        res.send({message:"User is already registered"});
-        console.log("User is already registered ");
-        }
-        else
-        {
-        
-        const user=new userDetails(formData);   //Passed the form data to the collection module to store in the database.
-        let result=await user.save();           //saving the data to the database.
-        //alert("Data is stored Successfully");
-        result=result.toObject();
-        res.send({message:"Registered Successfully now Sign In"});
-        console.log(result);
-        }
-    }
-    catch(e)
-    {
-        console.error('Error creating user:', e);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-    
-})*/
 
 app.post("/signup",async(req,res)=>{
     try {
@@ -110,15 +69,7 @@ app.post("/signup",async(req,res)=>{
      
     } 
     catch (error) {
-        console.error('Error during signup:', error); // Log the error
-
-        /*if (error.message === 'User with this email already exists') {
-            res.status(400).json({ error: 'User with this email already registered' });
-        } 
-        else {
-            console.error(error);
-            res.status(500).json({ error: 'Internal server error' });
-        }*/
+        console.error('Error during signup:', error); 
     }
 })
 app.post("/login", async (req,res)=>{
@@ -184,9 +135,6 @@ app.get("/validateuser",authenticate,async(req,res)=>{
 app.get("/logout",authenticate,async(req,res)=>{
     try{
         console.log("Tokens array:",req.rootUser.tokens);
-        /*req.rootUser.tokens=req.rootUser.tokens.filter((curelem)=>{
-            return curelem.token!==req.token
-        });*/
         req.rootUser.tokens = req.rootUser.tokens.filter((token) => token !== req.token);
         console.log("Logout token:",req.rootUser.tokens);
         res.clearCookie("usercookie",{path:"/login"})
@@ -204,13 +152,7 @@ app.get("/logout",authenticate,async(req,res)=>{
     }
 })
 
-/*app.get("/",(req,res)=>{
-    //res.send("Hello");
-    trekDetails.find({})
-    .then(details=>res.json(details))
-    .catch(err=>console.log(err))
-    
-});*/
+
 app.get("/", async (req, res) => {
     try {
       await client.connect();
@@ -293,36 +235,18 @@ app.delete('/removeBlog/:blogId', async (req, res) => {
     }
 });
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      const uploadPath = path.join(__dirname,'..','travel-app','public','Uploads');
-      cb(null, uploadPath);
-    },
-    filename: (req, file, cb) => {
-      cb(null, `${Date.now()}_${file.originalname}`);
-    },
-  });
-  
-const upload = multer({ storage });
 
-app.post('/uploadProfilePicture', upload.single('profilePicture'), async (req, res) => {
+
+app.post('/uploadProfilePicture', async (req, res) => {
     try {
         // Check if a file is provided
-        if (!req.file) {
-            return res.status(400).json({ error: 'No file provided' });
-        }
 
         const userId = req.body.userId; // Extract user ID from the request body
-        console.log('Request Body:', req.body);
-        // Update the user's document with the new profile picture
-
-        //const userFilter = { userId };
-        
-        //const userFilter = { _id: ObjectId(userId) };
+        const imageUrl=req.body.imageUrl;
+        console.log("user: ",userId);
         const existingUser = await preusers.findOne({_id:new ObjectId(userId)});
-        //console.log('User Filter:', userFilter);
         console.log('Existing User:', existingUser);
-        const update = { $set: { profilePicture: req.file.path } };
+        const update = { $set: { profilePicture: imageUrl } };
         console.log("update",update);
         const result = await preusers.updateOne({_id:new ObjectId(userId)}, update);
         console.log('Updated user document:', result);
@@ -334,7 +258,7 @@ app.post('/uploadProfilePicture', upload.single('profilePicture'), async (req, r
         return res.status(200).json({ message: 'Profile picture uploaded successfully' });
     } catch (error) {
         console.error('Error uploading profile picture:', error);
-        return res.status(500).json({ error: 'Internal Server Error',details:error.message});
+        return res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
