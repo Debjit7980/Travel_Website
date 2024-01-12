@@ -30,7 +30,7 @@ function Profile() {
                     navigate("/");
                 }
                 else {
-                    const res = await fetch("https://naturesdeck-backend-app.onrender.com/validateuser", {
+                    const res = await fetch("https://naturesdeck-trekcamp-backend-app.onrender.com/validateuser", {
                         method: "GET",
                         //credentials:"include",
                         headers: {
@@ -59,7 +59,7 @@ function Profile() {
         }
         validateUser();
 
-        fetch('https://naturesdeck-backend-app.onrender.com/allBlogs')
+        fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs')
             .then(response => response.json())
             .then(data => {
                 setBlogs(data);
@@ -229,7 +229,7 @@ function Profile() {
 
     const username = loginData.validUserOne ? loginData.validUserOne.username : '';
     const email = loginData.validUserOne ? loginData.validUserOne.email : '';
-    const pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
+    let pp = loginData.validUserOne ? loginData.validUserOne.profilePicture : '';
     const _id = loginData.validUserOne ? loginData.validUserOne._id : ' ';
     console.log("The image path is:", pp);
 
