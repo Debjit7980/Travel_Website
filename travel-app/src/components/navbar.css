@@ -79,8 +79,6 @@
 
 .signUp {
     color:rgb(12, 12, 12);
-    
-    
     width: 100px;
     position: absolute;
     bottom:0px;
@@ -104,16 +102,25 @@
     background-color:white;
     display: none;
     box-sizing: border-box;
+    position: absolute;
+    top:100%;
     box-shadow: 0px 8px 12px black;
 }
+#profile{
+    font-weight: 500;
+    position: relative;
+}
+
 .links{
+    position: absolute;
     color:black;
-    background-color: lightgrey;
+    background-color: rgb(202, 202, 202);
     width: 100px;
+    top:95%;
     font-size: 1.1rem;
     font-weight: lighter;
     letter-spacing: 1px;
-    position: relative;
+    
 }
 .links:hover{
     background-color: black;
@@ -122,18 +129,13 @@
     transition: ease-in 0.3s;
     
 }
-#profile{
-    font-weight: 500;
-    padding-bottom:28px;
-}
+
 #profile:hover{
     transition: ease-in 0.3s;
 }
 .dropdown-content button{
-    position: absolute;
-    bottom:-170%;
     right:0%;
-    padding:15px 2px;
+    padding:10px 2px;
     
 }
 .signUp:hover .dropdown-content{
@@ -212,6 +214,14 @@
         height: 50px;
         
     }
+    .dropdown-content{
+        background-color:white;
+        position: absolute;
+        top:100%;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 12px black;
+    }
+    
     #si{
         margin:auto;
     }
@@ -219,8 +229,11 @@
         right: 0%;
         margin-right:0;
     }
+    #navitems{
+        top:10%;
+    }
     .navbar-container.active>#navitems{
-        top:8%;
+        top:7%;
         border-radius:0px ;
         margin-right: 0px;
     }

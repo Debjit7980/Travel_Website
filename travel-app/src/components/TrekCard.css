@@ -3,7 +3,7 @@ body{
 }
 .card{
     display: flex;
-    width: 60%;
+    width: 70%;
     height:fit-content;
     margin:3% auto 8% auto;
 }
@@ -15,7 +15,7 @@ body{
     width:25%;
     border-radius: 20px;
     position: relative;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 .enquiry{
     border-left:1px dashed rgb(180, 178, 178);
@@ -79,8 +79,8 @@ body{
     width: 100%;
 }
 .trekimg{
-    height:260px;
-    width:220px;
+    height:300px;
+    width:322px;
 }
 .trekDesc{
     margin-left:2%;
@@ -132,4 +132,45 @@ body{
     display: flex;
     flex-direction: column;
     margin-right:10%;
+}
+@media (max-width:780px)
+{
+    .card{
+        width: 98%;
+        margin:15% auto;
+    }
+}
+@media (max-width:430px)
+{
+    .card, .trek-card{
+        flex-direction: column;
+    }
+    .card{
+        width: 110%;
+        margin-left:9%;
+        margin-bottom:100%;
+        
+    }
+    .trekimg{
+        height:280px;
+        width:322px;
+    }
+    .trek-card img{
+        border-radius:10px;
+        width: 100%;
+    }
+   .booking{
+    width: 330px;
+    }
+    .enquiry{
+        height: max-content;
+        padding:30px 10px 10px 10px;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        border-radius: 12px;
+        border:none;
+        border-top:1px dashed darkgrey;
+       
+    }
+   
 }

@@ -38,7 +38,7 @@ const CreateBlogs = () => {
       .then(response => response.json())
       .then(data => {
         setBlogs(data);
-        console.log("Blog data:",data);
+        console.log("Blog data:", data);
       })
       .catch(error => console.error('Error fetching blogs:', error));
   }, []);
@@ -78,9 +78,9 @@ const CreateBlogs = () => {
             dateTime: getCurrentDateTime(),
           }),
         });
-  
+
         if (response.ok) {
-          console.log("Blog in Mongodb:",response);
+          console.log("Blog in Mongodb:", response);
           const updatedBlogsResponse = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs');
           const updatedBlogsData = await updatedBlogsResponse.json();
           setBlogs(updatedBlogsData);
@@ -149,7 +149,7 @@ const CreateBlogs = () => {
       const response = await fetch(`https://naturesdeck-trekcamp-backend-app.onrender.com/removeBlog/${blogId}`, {
         method: 'DELETE',
       });
-  
+
       if (response.ok) {
         // Update the state with the latest blogs after deletion
         const updatedBlogsResponse = await fetch('https://naturesdeck-trekcamp-backend-app.onrender.com/allBlogs');
@@ -190,7 +190,7 @@ const CreateBlogs = () => {
               onChange={handleBlogTitleChange}
               id="blog"
             />
-             <div className='text-area'>
+            <div className='text'>
               <textarea
                 rows="18" cols="40"
                 placeholder="Write your blog content here..."
@@ -215,9 +215,6 @@ const CreateBlogs = () => {
             {showPopup && (
               <div className="popup">
                 <div className="popup-content">
-                  <span className="close" onClick={handleClosePopup}>
-                    &times;
-                  </span>
 
                   <p id="msg">{showPopupMessage}</p>
                   {
@@ -226,16 +223,13 @@ const CreateBlogs = () => {
                   }
 
                 </div>
+                <span className="close" onClick={handleClosePopup}>
+                  &times;
+                </span>
               </div>
             )}
-           
+
           </div>
-          
-          {loading && (
-              <div className="loading-container">
-                <div className="loading-bar" style={{ width: `${progress}%` }} />
-              </div>
-            )}
         </div>
 
         <div className='posts'>

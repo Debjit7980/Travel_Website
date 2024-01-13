@@ -47,7 +47,8 @@
     font-size: 2.9rem;
 }
 .spinner-blue{
-    color:blue;
+    color:rgb(38, 124, 236);
+    font-size: 1.4rem;
 }
 .profile-body{
     display: flex;
@@ -82,6 +83,9 @@
 }
 .text-area{
     position:relative;
+    width: 90%;
+    text-align: left;
+    margin-left:0.1%;
 }
 .loading-profile{
     position: absolute;
@@ -107,11 +111,14 @@
     border:1px solid grey;
     font-size: 1.5rem;
 }
-#profile-blogCont{
-    margin-left: 0%;
-    font-size: 1.2rem;
-    padding:5px;
-    border:1px solid grey;
+.text-area textarea{
+    font-size:1.2rem;
+    letter-spacing: 1.2px;;
+    width: 100%;
+    padding:30px;
+    color:black;
+    font-family: sans-serif;
+    
 }
 #your-blogs{
     font-weight: lighter;
@@ -268,6 +275,10 @@
     #profile-list{
         width: 90%;
         padding-bottom: 10px;
+    }
+    .text-area{
+        margin-top:5%;
+        margin-bottom:5%;
     }
     #blogtitle{
         display: flex;
