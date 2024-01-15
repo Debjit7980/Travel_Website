@@ -55,7 +55,10 @@
        
     }
     .wrapper{
-        margin-left:-2%;
-        border:1px solid black;
+        margin:0 auto;
+    }
+    .wrapper ul li{
+        margin-right:2%;
+        margin-left:2%;
     }
 } 

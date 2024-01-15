@@ -74,18 +74,17 @@
     width: 80%;
 }
 .blog-form{
-    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 3%;
     margin-bottom: 10%;
 }
-.text-area{
-    position:relative;
+.text-area textarea{
+    position: relative;
     width: 90%;
     text-align: left;
-    margin-left:0.1%;
+   
 }
 .loading-profile{
     position: absolute;
@@ -291,5 +290,14 @@
         margin:10% 0 0 0;
         width: 100%;
 
+    }
+    .blog-form{
+        margin-left:6%;
+        z-index: 100;
+    }
+    .text-area textarea{
+        margin-top:5%;
+        width:90%;
+      
     }
 }

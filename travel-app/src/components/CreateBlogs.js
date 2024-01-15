@@ -114,7 +114,7 @@ const CreateBlogs = () => {
     if (loading) {
       interval = setInterval(() => {
         setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-      }, 1200);
+      }, 200000);
     }
 
     return () => {
@@ -198,7 +198,7 @@ const CreateBlogs = () => {
                 required
                 onChange={handleBlogContentChange}
                 style={{ whiteSpace: 'pre-wrap' }}
-                id="profile-blogCont"
+                id="blogCont"
               />
               {loading && (
                 <div className="loading-container loading-profile">
