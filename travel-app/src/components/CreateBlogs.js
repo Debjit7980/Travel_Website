@@ -114,7 +114,7 @@ const CreateBlogs = () => {
     if (loading) {
       interval = setInterval(() => {
         setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-      }, 1200);
+      }, 2000000000000);
     }
 
     return () => {
@@ -201,7 +201,7 @@ const CreateBlogs = () => {
                 id="blogCont"
               />
               {loading && (
-                <div className="loading-container loading-profile">
+                <div className="loading-container">
                   <div className="loading-bar" style={{ width: `${progress}%` }} />
                 </div>
               )}
