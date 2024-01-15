@@ -57,13 +57,13 @@ function Navbar() {
                 <div className={navbar ? 'navbar-container active' : 'navbar-container'}>
                     <Link to='/' className="navbar-logo"><i className="fa-sharp fa-solid fa-person-hiking" style={{ fontSize: 35 }}></i> NaturesDeck</Link>
                     <ul className={click ? '#navitems active' : '#navitems'} id={"navitems"}>
-                        <li className='nav-item'>
+                        <li className='nav-item link' >
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home </Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='nav-item link'>
                             <Link to='/services' className='nav-links' onClick={closeMobileMenu}>Blogs</Link>
                         </li>
-                        <li className='nav-item'>
+                        <li className='nav-item link'>
                             <Link to='/products' className='nav-links' onClick={closeMobileMenu}>Products</Link>
                         </li>
                         {loginData.validUserOne ?

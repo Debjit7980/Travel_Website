@@ -239,10 +239,11 @@ function Profile() {
             <div className="profile-container">
                 <div className='profile'>
                     <img src={require("../components/images/banner_profile.jpg")} alt="banner" />
+                    <div className='profile-name'>
+                        <p>Hey, {username}<br/><span>How are you doing?</span></p>
+                    </div>
                 </div>
-                <div className='profile-name'>
-                    <p>Hey, {username}</p><span>How are you doing?</span>
-                </div>
+                
                 <div className='profile-body'>
                     <div className='profile-content'>
                         <label className="custom-file-upload">

@@ -1,11 +1,11 @@
 .profile-container{
-    position: relative;
     width:100%;
     height:max-content;
     display: flex;
     flex-direction: column;
 }
 .profile{
+    position: relative;
     width:100%;
     display: flex;
     background-size: cover;
@@ -28,8 +28,9 @@
     pointer-events: none; /* Allows interaction with the underlying image */
 }
 .profile-name{
+    z-index: 1;
     position: absolute;
-    top:6%;
+    top:36%;
     left:0;
     right:0;
     width: 100%;
@@ -42,7 +43,7 @@
     font-size: 3rem;
     font-weight: 100;
     font-style: italic;
-}
+}s
 .profile-name span{
     font-size: 2.9rem;
 }
@@ -74,17 +75,18 @@
     width: 80%;
 }
 .blog-form{
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-left: 3%;
     margin-bottom: 10%;
 }
-.text-area textarea{
-    position: relative;
+.text-area{
+    position:relative;
     width: 90%;
     text-align: left;
-   
+    margin-left:0.1%;
 }
 .loading-profile{
     position: absolute;
@@ -225,7 +227,12 @@
     left:0;
     top:30%;
 }
-
+.loading-profile{
+    position:absolute;
+    bottom:-0.6%;
+    width:100%;
+    margin-left:0%;
+}
 @media screen and (max-width:930px)
 {
     .profile-name{
@@ -255,8 +262,9 @@
         width: 100%;
     }
 }
-@media screen and (max-width:420px)
+@media  (max-width:430px)
 {
+    
     .custom-file-upload{
         width: 36%;
         height:138px ;
@@ -275,9 +283,14 @@
         width: 90%;
         padding-bottom: 10px;
     }
+    .blog-form{
+        margin-left:5%;
+    }
     .text-area{
         margin-top:5%;
-        margin-bottom:5%;
+        margin-bottom:7%;
+       
+        position: relative;
     }
     #blogtitle{
         display: flex;
@@ -290,14 +303,5 @@
         margin:10% 0 0 0;
         width: 100%;
 
-    }
-    .blog-form{
-        margin-left:6%;
-        z-index: 100;
-    }
-    .text-area textarea{
-        margin-top:5%;
-        width:90%;
-      
     }
 }
