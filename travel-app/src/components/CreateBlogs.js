@@ -114,7 +114,7 @@ const CreateBlogs = () => {
     if (loading) {
       interval = setInterval(() => {
         setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-      }, 2000000000000);
+      }, 1200);
     }
 
     return () => {

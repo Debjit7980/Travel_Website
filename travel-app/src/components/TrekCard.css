@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(240, 239, 239);
+    background-color: rgb(216, 216, 216);
 }
 .card{
     display: flex;
@@ -142,25 +142,27 @@ body{
 }
 @media (max-width:430px)
 {
+   
+    .trek-card{
+        width: 78%;
+        border-radius:10px 10px 20px 20px;
+        box-shadow: 0 0 15px black;
+    }
     .card, .trek-card{
         flex-direction: column;
     }
     .card{
         width: 110%;
-        margin-left:9%;
+        margin-left:7%;
         margin-bottom:100%;
         
     }
-    .trekimg{
-        height:280px;
-        width:322px;
-    }
     .trek-card img{
-        border-radius:10px;
-        width: 100%;
+        border-radius:10px 10px 10px 10px;
     }
    .booking{
-    width: 330px;
+    width: 332px;
+    
     }
     .enquiry{
         height: max-content;
@@ -170,7 +172,8 @@ body{
         border-radius: 12px;
         border:none;
         border-top:1px dashed darkgrey;
-       
+        box-shadow: 0 0 15px black;
+
     }
    
 }
