@@ -58,10 +58,10 @@ function Navbar() {
                     <Link to='/' className="navbar-logo"><i className="fa-sharp fa-solid fa-person-hiking" style={{ fontSize: 35 }}></i> NaturesDeck</Link>
                     <ul className={click ? '#navitems active' : '#navitems'} id={"navitems"}>
                         <li className='nav-item link' >
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home </Link>
+                            <Link to='/' className='nav-links normal'  onClick={closeMobileMenu}>Home </Link>
                         </li>
                         <li className='nav-item link'>
-                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>Blogs</Link>
+                            <Link to='/services' className='nav-links normal' onClick={closeMobileMenu}>Blogs</Link>
                         </li>
                         <li className='nav-item link'>
                             <Link to='/products' className='nav-links' onClick={closeMobileMenu}>Products</Link>

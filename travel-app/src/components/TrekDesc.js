@@ -4,6 +4,7 @@ import Wall from './Wall';
 import { useParams } from 'react-router-dom';
 //import axios from 'axios';
 import TrekCard from './TrekCard';
+
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
@@ -37,7 +38,7 @@ function TrekDesc() {
     console.log(trips)
     console.log(typeof(trips));
   return (
-    <div>
+    <div className="trek-desc-page" style={{backgroundImage: 'linear-gradient(to top, #F3F4F7 , #BDCAD9)'}}>
       {data ? 
         <>
         <Navbar/>

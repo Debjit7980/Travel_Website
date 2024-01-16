@@ -1,6 +1,4 @@
-body{
-    background-color: rgb(216, 216, 216);
-}
+
 .card{
     display: flex;
     width: 70%;
@@ -79,8 +77,8 @@ body{
     width: 100%;
 }
 .trekimg{
-    height:300px;
-    width:322px;
+    height:330px;
+    width:330px;
 }
 .trekDesc{
     margin-left:2%;
@@ -144,26 +142,33 @@ body{
 {
    
     .trek-card{
-        width: 78%;
+        width: 100%;
         border-radius:10px 10px 20px 20px;
-        box-shadow: 0 0 15px black;
     }
     .card, .trek-card{
         flex-direction: column;
     }
     .card{
-        width: 110%;
-        margin-left:7%;
-        margin-bottom:100%;
+        display: flex;
+        width:95%;
+        margin: 25% 2% 100% 2%;
+        
         
     }
     .trek-card img{
         border-radius:10px 10px 10px 10px;
+        width:100%;
+        height: 100%;
+    }
+    .trekimg{  
+        display: flex;
+        width: 100%;
     }
    .booking{
-    width: 332px;
-    
+    width: 100%;
+    background-image: linear-gradient();
     }
+    
     .enquiry{
         height: max-content;
         padding:30px 10px 10px 10px;
@@ -172,7 +177,7 @@ body{
         border-radius: 12px;
         border:none;
         border-top:1px dashed darkgrey;
-        box-shadow: 0 0 15px black;
+       
 
     }
    

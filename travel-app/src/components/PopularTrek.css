@@ -14,124 +14,49 @@
     margin:1% auto 40px;
     width:10%;
 }
-
-/*
-.card-container{
-    margin-left:4%;
-}
-.card-wrapper{
-    width:95%;
-    transform: translateZ(0);
-    
-    ::-webkit-scrollbar {
-        display: none;
-     }
-    
-}
-.card-wrapper ul{
-    display: flex;
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding:22px 0px;
-    height: auto;
-}
-
-#navi{
-    border:2px solid red;
-    height:350px;
-    margin-right:3%;
-    padding:0;
-    position: relative;
-    background-color: white;
-}
-.card-desc{
-    font-size: 20px;
-    font-family: sans-serif;
-    letter-spacing: 2px;
-}
-
-.fade{
-    position: absolute;
-    bottom:0;
-}
-
-@media screen and (max-width:430px) {
-    .popularTrek h1{
-        text-align: center;
-        color:rgb(65, 65, 65);
-        font:2rem Poppins, sans-serif;
-        font-weight: 600;
-    }
-    .popularTrek hr{
-        border: 2px solid rgb(255, 145, 0);
-        margin:2% auto 40px;
-        width: 10%;
-    }
-    button{
-        margin-right:1%;
-    }
-    .card-container{
-        margin-top:-12%;
-        padding-left:0;
-    }
-    .card-items{
-        margin-left:-6%;
-        margin-right:-6%;
-    }
-    
-}
-@media screen and(max-width:390px){
-    button{
-        margin-right:1%;
-    }
-}*/
 .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:4% 3%;
+}
+
+.card-wrapper {
+  width: 100%;
   
-  .card-wrapper {
-    width: 100%;
-    max-width: 1200px;
-  }
+}
+.card-items {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  overflow-x: auto;
+  gap: 5rem;
+  padding:30px
+}
+#navi{
+  border-radius:20px;
+  display: flex;
+  padding:0;  
+  border:none;
+}
+.card-item:hover {
+  transform: scale(1.05);
+}
+.figure {
+  background-size: cover;
   
-  .card-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding-bottom: 10px;
-  }
-  
-  .card-item {
-    flex: 0 0 auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .card-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .figure {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-  }
+  overflow: hidden;
+  display: flex;
+  border-radius: 8px;
+  border-radius:20px;
+  width:100%;
+  height:100%;
+}
   
   .figure img {
     width: 100%;
-    height: auto;
-    display: block;
-    max-height: 650px;
+    height:100%;
+    border-radius: 20px;  
   }
   
   .fade {

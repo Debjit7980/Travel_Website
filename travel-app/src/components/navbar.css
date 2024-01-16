@@ -66,9 +66,11 @@
 .nav-links{
     color:black;
     font-size: 1.3rem;
-    margin-right:2rem;
     font-weight:300;
     letter-spacing: 1px;
+}
+.normal{
+    margin-right:2rem;
 }
 #signUp a{
     display: inline-block;
@@ -82,8 +84,8 @@
     width: 100px;
     position: absolute;
     bottom:0px;
-    height:60px;
-    top:-10%;
+    height:61px;
+    top:-10.5%;
     text-align: center;
     background-color: rgba(190, 30, 30, 0.9);
     font-size: 1.3rem;
@@ -106,6 +108,7 @@
     top:100%;
     box-shadow: 0px 8px 12px black;
 }
+
 #profile{
     font-weight: 500;
     position: relative;
@@ -113,13 +116,13 @@
 }
 
 .links{
-    position: absolute;
+    border: none;
     color:black;
+    position: absolute;
     background-color: rgb(202, 202, 202);
     width: 100px;
     top:95%;
-    font-size: 1.1rem;
-    font-weight: lighter;
+    font-size: 1.3rem;
     letter-spacing: 1px;
     right:0%;
     padding:12px 0;
@@ -136,7 +139,7 @@
     transition: ease-in 0.3s;
 }
 .dropdown-content button{
-    padding:16px 0;
+    padding:16px 0px;
 }
 .signUp:hover .dropdown-content{
     display: block;
@@ -147,7 +150,9 @@
     padding-bottom:4px;
     
 }
-
+#si{
+    color:white;
+}
 .link a::before {
     content: "";
     position: absolute;
@@ -172,10 +177,10 @@
     }
 }
 
-@media  screen and (max-width:960px){
+@media  screen and (max-width:970px){
     
     .navbar-container>#navitems{
-        top:12%;
+        top:9%;
        
     }
     #navitems{
@@ -218,25 +223,27 @@
         margin-top:2.5%;
     }
     #navitems.active{
-        left:65%;
-        margin-right: 2%;
+        left:67%;
         
     }
     .navbar-container.active>#navitems.active{
-        left:68%;
+        left:69%;
     }
     .navbar-container.active>#navitems{
-        top:9%;
-
-        margin-right: 0px;
+        top:7%;
         border-radius:0px ;
+       
     }
+    .nav-links{
+        margin-right:2rem;
+    }
+    
 }
 @media screen and (max-width:430px){
     #navitems{
         width:100%;
         right:-100%;
-        top:12%;
+        top:6%;
         margin:auto;
     }
     .signUp{
@@ -263,30 +270,51 @@
         right: 0%;
         margin-right:0;
     }
-    #navitems{
-        top:10%;
+    .navbar-container>#navitems {
+        top:8.6%;
     }
     .navbar-container.active>#navitems{
-        top:9%;
+        top:6.6%;
         border-radius:0px ;
         margin-right: 0px;
     }
     
     #signUp a{
-        padding:10px 13px;
+        padding:15px 13px;
          text-align: center;
+        
     }
     .menu-icon{
         display: block;
         margin-top:6%;
     }
 }
-@media screen and (max-width:390px){
-    .navbar-container>#navitems{
+@media (max-width:394px)
+{
+    .navbar-container>#navitems {
+        top:10.1%;
+    }
+    .navbar-container.active>#navitems{
+        top:7.6%;
+        
+    }
+}
+@media (max-width:376px)
+{
+    .navbar-container>#navitems {
+        top:11.6%;
+    }
+    .navbar-container.active>#navitems{
+        top:9%;
+        
+    }
+}
+@media (max-width:360px){
+    .navbar-container>#navitems {
         top:12%;
     }
     .navbar-container.active>#navitems{
         top:9%;
-        border-radius:0px ;
+        
     }
 }

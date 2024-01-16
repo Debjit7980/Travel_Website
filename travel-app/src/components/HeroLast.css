@@ -1,6 +1,7 @@
 .hero-last{
     position: relative;
-
+    margin-top:12%;
+    margin-bottom:12%;
 }
 .hero-image{
     
@@ -112,5 +113,8 @@
     }
     .offer-desc button{
         margin-top:6%;
+    }
+    .hero-last{
+        margin-bottom:30%;
     }
 }
