@@ -1,19 +1,4 @@
-/*.blogContainer{
-    width: 50%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-}
-.blogContainer h1{
-   margin: auto;
-}
-input{
-    padding:8px;
-    margin:5% 0 5% 0;
-}
-textarea{
-    margin:5% 0 5% 0;
-}*/
+
 .loading-container {
   position: absolute;
   transform:skew(30deg);
@@ -63,9 +48,6 @@ textarea{
     flex-direction: column;
   }
   .writeBlog{
-    /*background-image: url('https://wallpapers.com/images/hd/hiking-and-camping-tnti3dz9dnz77toz.jpg');
-    background-image: url("https://previews.123rf.com/images/nnnnae/nnnnae1507/nnnnae150700159/41936438-world-travel-seamless-pattern-endless-texture-can-be-used-for-wallpaper-pattern-fills-web-page.jpg");
-    */
     background-repeat: no-repeat;
     height: 62rem;
     background-size: cover;
@@ -77,22 +59,6 @@ textarea{
     
   }
  
-  /*.fadeBlog{
-    background-image: linear-gradient(to right, rgba(0,0,0,0.9),transparent 30%);
-    width: 100%;
-    
-    height:100%;
-    z-index: -50;
-    position:absolute;
-  }
-  .fadeBlogTwo{
-    background-image: linear-gradient(to left, rgba(0,0,0,0.9),transparent 30%);
-    width: 100%;
-    height:100%;
-    z-index: -50;
-    position:absolute;
-    right:0;
-  }*/
   #abc{
     font-size: 2.9rem;
     text-align: center;
@@ -132,13 +98,19 @@ textarea{
     color:black;
   }
   .popup-content button{
-    padding:5px;
+    padding:7px;
     border-radius: 10px;
     font-family: sans-serif;
     letter-spacing: 1px;
     font-size: 1rem;
     color:black;
-    background-color: transparent;
+    background-color: rgba(190, 30, 30, 0.9);
+    border:none;
+    display: flex;
+    width: 70%;
+    margin:10% auto 1% auto;
+    color:white;
+    justify-content: center;
   }
   .popup-content button:hover{
     background-color: rgb(199, 198, 198);
@@ -247,8 +219,11 @@ textarea{
   }
   #remove{
     background-color: rgba(190, 30, 30, 0.9);
-    bottom:2%;
+    bottom:3%;
     position: absolute;
+    border:none;
+    padding:10px 20px;
+    color:white;
   }
   #date{
     font-size:16px;
@@ -425,7 +400,7 @@ li:last-child {
   width: 80%;
   left:10%;
   right:0;
-  
+  justify-content: center;
 }
 .text{
   margin-top:16%;

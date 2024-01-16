@@ -83,7 +83,7 @@ function Navbar() {
                                 </li>
                             </> :
                             <>
-                                <li className='nav-item' style={{ marginLeft: 100 }} id="signUp">
+                                <li className='nav-item signupLink' style={{ marginLeft: 100 }} id="signUp">
                                     <div className='signUp'>
                                         <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>Sign Up</Link>
                                     </div>

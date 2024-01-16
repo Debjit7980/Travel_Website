@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import { LoginContext } from './Context'
 import './profile.css';
+import Footer from './Footer'
 import { storage } from './firebase';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -310,7 +311,7 @@ function Profile() {
                             )}
                             <button id="profile-add" onClick={handleButtonClick}>Add Blog</button>
                             {showPopup && (
-                                <div className="popup">
+                                <div className="popup profile-popup">
                                     <div className="popup-content">
                                         <span className="close" onClick={handleClosePopup}>
                                             &times;
@@ -348,6 +349,7 @@ function Profile() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
