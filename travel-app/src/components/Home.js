@@ -9,6 +9,7 @@ import Footer from './Footer'
 import { useNavigate } from 'react-router-dom'
 import { LoginContext } from './Context'
 import './home.css';
+import banner from '../components/images/banner.avif';
 
 
 
@@ -72,7 +73,7 @@ function Home() {
               btn2="Get Started" />
             <PopTrek />                
             <div className='trekBanner'>
-              <img src={require("../components/images/TR\ \(1\).jpg")} alt="banner" />
+              <img src={banner} alt="banner" />
             </div>
             <PopularTrek />
             <PopCamp />

@@ -110,7 +110,7 @@ function Profile() {
             }
             setTimeout(() => {
                 setShowPopup(false);
-            }, 400);
+            }, 4000);
             await new Promise((resolve) => setTimeout(resolve, 8000));
             setLoading(false)
             setShowPostedMessage(true);
@@ -316,11 +316,8 @@ function Profile() {
                                         <span className="close" onClick={handleClosePopup}>
                                             &times;
                                         </span>
-
-                                        <p id="msg">{showPopupMessage}
-                                           <button onClick={handleAddBlog} id="confirm">Confirm</button>
-                                        </p>
-
+                                        <p id="msg">{showPopupMessage}</p>
+                                        <button onClick={handleAddBlog} id="confirm">Confirm</button>
                                     </div>
                                 </div>
                             )}

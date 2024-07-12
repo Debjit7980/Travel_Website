@@ -1,6 +1,6 @@
 
 .popularTrek{
-    margin-top: 8%;
+    margin-top: 0%;
 }
 .popularTrek h1{
     text-align: center;
@@ -10,7 +10,7 @@
 }
 .popularTrek hr{
     border: 2px solid rgb(255, 145, 0);
-    margin:1% auto 40px;
+    margin:1% auto 20px;
     width:7%;
 }
 .wrapper{
@@ -43,8 +43,11 @@
         width: 10%;
     }
 }
-@media (max-width: 392px)
+@media (max-width: 420px)
 {
+    .popularTrek{
+        margin-top: 5%;
+    }
     .popularTrek h1{
         font:2rem Poppins, sans-serif;
         margin: 0 5%;

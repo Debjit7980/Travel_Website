@@ -36,7 +36,7 @@ function PopularTrek() {
             <ul className='card-items'>
                 {
                   trek.map((t)=>{
-                    return<button id="navi" key={t._id}>
+                    return<div id="navi" key={t._id}>
                       <li className='card-item'>
                         <Link to={`/trekdesc/${t._id}`}>
                           <div className='figure'>
@@ -48,7 +48,7 @@ function PopularTrek() {
                           </div>
                         </Link>
                       </li>
-                    </button>
+                    </div>
                   })
                 }
             </ul>

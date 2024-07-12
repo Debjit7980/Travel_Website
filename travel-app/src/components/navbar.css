@@ -60,13 +60,14 @@
 .nav-item li{
     list-style: none;
     display: inline-block;
-    
-}
 
+}
+.nav-item a{
+    font-weight: lighter;
+}
 .nav-links{
     color:black;
     font-size: 1.3rem;
-    font-weight:300;
     letter-spacing: 1px;
 }
 .normal{
