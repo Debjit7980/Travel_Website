@@ -1,0 +1,67 @@
+
+.popularTrek{
+    margin-top: 0%;
+}
+.popularTrek h1{
+    text-align: center;
+    color:rgb(65, 65, 65);
+    font-family:'Segoe Print';
+    font-weight: 500;
+}
+.popularTrek hr{
+    border: 2px solid rgb(255, 145, 0);
+    margin:1% auto 20px;
+    width:7%;
+}
+.wrapper{
+    margin:2% 5%;
+   transform: translateZ(0);
+   justify-content: center;
+   ::-webkit-scrollbar {
+    display: none;
+ }
+}
+.wrapper ul{
+    display: flex;
+    padding:30px 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.wrapper ul li{
+    list-style: none;
+}
+@media screen and (max-width: 362px) {
+   .wrapper{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+   }
+   .popularTrek h1{
+    font:2rem Poppins, sans-serif;
+    }
+    .popularTrek hr{
+        width: 10%;
+    }
+}
+@media (max-width: 420px)
+{
+    .popularTrek{
+        margin-top: 5%;
+    }
+    .popularTrek h1{
+        font:2rem Poppins, sans-serif;
+        margin: 0 5%;
+    }
+    .popularTrek hr{
+        width: 30%;
+        margin-top:4%;
+       
+    }
+    .wrapper{
+        margin:0 auto;
+    }
+    .wrapper ul li{
+        margin-right:2%;
+        margin-left:2%;
+    }
+} 
