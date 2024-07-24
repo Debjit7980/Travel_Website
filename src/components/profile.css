@@ -1,0 +1,356 @@
+.profile-container{
+    width:100%;
+    height:max-content;
+    display: flex;
+    flex-direction: column;
+}
+.profile{
+    position: relative;
+    width:100%;
+    display: flex;
+    background-size: cover;
+    height: 700px;
+}
+.profile img{
+    width:100%;
+    height:100%;
+    opacity: 0.2;
+}
+.profile::before {
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    
+    /* Adjust the gradient colors and direction as needed */
+    pointer-events: none; /* Allows interaction with the underlying image */
+}
+.profile-name{
+    z-index: 1;
+    position: absolute;
+    top:36%;
+    left:0;
+    right:0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    text-align: center;
+    color:black;
+    padding:10px;
+    font-size: 3rem;
+    font-weight: 100;
+    font-style: italic;
+}s
+.profile-name span{
+    font-size: 2.9rem;
+}
+.spinner-blue{
+    color:rgb(38, 124, 236);
+    font-size: 1.4rem;
+}
+.profile-body{
+    display: flex;
+    width:100%;
+    background-color: white;
+}
+.profile-content{   
+    width:20%;
+    display: flex;
+    flex-direction: column;
+    padding:8px;
+    line-height: 3rem;
+    margin-left:2%;
+    border-right: 1px solid grey;
+    margin-top:2%;
+    line-height: 2.8rem;
+}
+.profile-content p{
+    font-size:1.2rem;
+    
+}
+.profile-posts{
+    width: 80%;
+}
+.blog-form{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-bottom: 10%;
+}
+.text-area{
+    position:relative;
+    width: 90%;
+    text-align: left;
+    margin-left:0.1%;
+}
+.loading-profile{
+    position: absolute;
+    bottom:0;
+    width:80%;
+}
+#confirm{
+    margin-top: 8%;
+    width:80%;
+    display: flex;
+    justify-content: center;
+    padding:6px;
+}
+.profile-popup{
+   padding:8px;
+   width: auto;
+   left:28%;
+}
+.profile-popup span{
+    right:0;
+}
+#profile-msg{
+    text-align: center;
+    font-size: 2.5rem;
+    color:darkgrey;
+    margin-bottom:2%;
+}
+#profile-blog{
+    height:3rem;
+    width: 50%;
+    padding:5px;
+    border:1px solid grey;
+    font-size: 1.2  rem;
+}
+.text-area textarea{
+    font-size:1.2rem;
+    letter-spacing: 1.2px;;
+    width: 100%;
+    padding:30px;
+    color:black;
+    font-family: sans-serif;
+    
+}
+#your-blogs{
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 3rem;
+    border-bottom:1px solid grey;
+    width:80%;
+    padding-bottom:40px;
+    margin: auto;
+}
+.profile-posts button{
+    margin-top:2%;
+    
+}
+.blog-form button{
+    width:10%;
+    border:none;
+    background-color: rgb(161, 4, 4);
+    color:white;
+    padding:8px;
+    font-size: 1.2rem;
+}
+.blog-form button:hover{
+    background-color: black;
+    box-shadow: 0 3px 12px rgb(112, 112, 112);
+    transition: ease-in 0.2s;
+}
+#profile-list{
+    margin:auto;
+    width: 75%;
+    box-shadow: 0 0 12px black ;
+    align-items: center;
+    justify-content: center;
+    padding:40px 20px;
+    margin-bottom:12%;
+}
+
+#profile-list>#blogtitle{
+    margin:auto;
+    padding-bottom:12px;
+    margin-bottom: 5%;
+}
+#profile-remove{
+    background-color: rgba(190, 30, 30, 0.9);
+    margin-left:47%;
+    margin-top:4%;
+    margin-bottom: none;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    cursor: pointer;
+}
+#profile-remove:hover{
+    background-color: black;
+    transition: ease-in 0.4s;
+    box-shadow: 2px 4px 10px rgb(92, 92, 92);
+}
+.custom-file-upload  input[type="file"]{
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #dddddf;
+    width: 42%;
+    font-weight: lighter;
+    color:darkgrey;
+    line-height: 20px;
+    height:130px;
+    border: none;
+    margin-top:5%;
+    text-align: center;
+    position:relative;
+    margin-bottom: 10%;
+}
+.profile-content button{
+    position: absolute;
+    bottom:0;
+    right:0;
+    border-radius: 50px;
+    font-size: 0.6rem;
+    padding:10px;
+    background-color: darkgrey;
+    border:none;
+    cursor: pointer;
+}
+
+.profile-image{
+    width: 100%;
+    height:100%;
+    padding:none;
+}
+.custom-file-upload img{
+    width:100%;
+    height:100%;
+    border-radius: 50px;
+}
+.custom-file-upload span{
+    position: absolute;
+    left:0;
+    top:30%;
+}
+
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    border-radius: 50px;
+}
+.custom-file-upload span{
+    position: absolute;
+    left:0;
+    top:30%;
+}
+.loading-profile{
+    position:absolute;
+    bottom:-0.6%;
+    width:100%;
+    margin-left:0%;
+}
+@media screen and (max-width:930px)
+{
+    .profile-name{
+        width: 100%;
+        bottom:20%;
+        left:0;
+        right:0;
+    }
+    .profile-body{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .profile-content{
+        border-bottom:1px solid darkgrey;
+        border-right:none;
+        width: 95%;
+        margin:auto;
+        padding:10px 20px;
+    }
+    .custom-file-upload{
+        width: 16%;
+        height:180px ;
+        margin-bottom: 4%;
+    }
+    .profile-posts{
+        width: 100%;
+    }
+}
+@media  (max-width:430px)
+{
+    .profile-popup{
+        left:10%;
+        width:70%;
+        height: auto;
+    }
+    .popup-content{
+        
+        padding:0;
+    }
+    .popup-content p{
+        font-size: 18px;
+    }
+    .popup-content span{
+        right:0;
+        top:-10px;
+    }
+    #confirm{
+        margin: auto;
+        margin-top: 6%;
+        width: 70%;
+        font-size: 16px;
+    }
+    .custom-file-upload{
+        width: 36%;
+        height:138px ;
+        margin-bottom: 4%;
+    }
+    .blog-form button{
+        width:90%;
+        margin-right:50%;
+        border:none;
+        background-color: rgb(161, 4, 4);
+        color:white;
+        padding:8px;
+        font-size: 1.2rem;
+    }
+    #profile-list{
+        width: 90%;
+        padding-bottom: 10px;
+    }
+    .blog-form{
+        margin-left:5%;
+    }
+    .text-area{
+        margin-top:5%;
+        margin-bottom:7%;
+       
+        position: relative;
+    }
+    #blogtitle{
+        display: flex;
+        width: 96%;
+        padding:2px;
+    }
+    #date{
+        margin-bottom:-3%;
+    }
+    #blogtitle-two{
+        font-size: 1rem;
+    }
+    #profile-remove{
+        margin:10% 0 0 0;
+        width: 100%;
+
+    }
+    #profile-list{
+        margin-bottom:20%;
+    }
+   
+}
